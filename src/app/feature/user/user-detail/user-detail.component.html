@@ -1,1 +1,88 @@
-<p>user-detail works!</p>
+<div class="p-4">
+  <h1>{{ title }}</h1>
+  <table>
+    <tr>
+      <td>User Name:</td>
+      <td>
+        <input [(ngModel)]="user.username" type="text" disabled />
+      </td>
+    </tr>
+    <tr>
+      <td>Password:</td>
+      <td>
+        <input [(ngModel)]="user.password" type="password" disabled />
+      </td>
+    </tr>
+    <tr>
+      <td>First Name:</td>
+      <td>
+        <input [(ngModel)]="user.firstName" type="text" disabled />
+      </td>
+    </tr>
+    <tr>
+      <td>Last Name:</td>
+      <td>
+        <input [(ngModel)]="user.lastName" type="text" disabled />
+      </td>
+    </tr>
+    <tr>
+      <td>Phone Number:</td>
+      <td>
+        <input [(ngModel)]="user.phoneNumber" type="text" disabled />
+      </td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td>
+        <input [(ngModel)]="user.email" type="text" disabled />
+      </td>
+    </tr>
+    <tr>
+      <td>Character Name:</td>
+      <td>
+        <input [(ngModel)]="user.characterName" type="text" disabled />
+      </td>
+    </tr>
+    <tr>
+      <td>Class:</td>
+      <td>
+        <select [(ngModel)]="user.job" class="rounded" disabled>
+          <option *ngFor="let job of jobs" [ngValue]="job">
+            {{ job }}
+          </option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Title:</td>
+      <td>
+        <input [(ngModel)]="user.title" type="text" disabled />
+      </td>
+    </tr>
+    <tr>
+      <td>Reviewer:</td>
+      <td>
+        <input [(ngModel)]="user.reviewer" type="checkbox" disabled />
+      </td>
+    </tr>
+    <tr>
+      <td>Admin:</td>
+      <td>
+        <input [(ngModel)]="user.admin" type="checkbox" disabled />
+      </td>
+    </tr>
+  </table>
+  <span>
+    <span
+      ><a routerLink="/user-edit/{{ user.id }}" class="btn btn-sm btn-warning"
+        >Edit</a
+      ></span
+    >
+    <span>
+      |
+      <button (click)="delete()" class="btn btn-sm btn-danger">
+        Delete
+      </button></span
+    >
+  </span>
+</div>
