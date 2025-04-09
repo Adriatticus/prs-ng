@@ -1,1 +1,83 @@
-<p>user-edit works!</p>
+<div class="p-4">
+    <h1>{{ title }}</h1>
+    <table>
+      <tr>
+        <td>User Name:</td>
+        <td>
+          <input [(ngModel)]="user.username" type="text" />
+        </td>
+      </tr>
+      <tr>
+        <td>Password:</td>
+        <td>
+          <input [(ngModel)]="user.password" type="password" />
+        </td>
+      </tr>
+      <tr>
+        <td>First Name:</td>
+        <td>
+          <input [(ngModel)]="user.firstName" type="text" />
+        </td>
+      </tr>
+      <tr>
+        <td>Last Name:</td>
+        <td>
+          <input [(ngModel)]="user.lastName" type="text" />
+        </td>
+      </tr>
+      <tr>
+        <td>Phone Number:</td>
+        <td>
+          <input [(ngModel)]="user.phoneNumber" type="text" />
+        </td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td>
+          <input [(ngModel)]="user.email" type="text" />
+        </td>
+      </tr>
+      <tr>
+        <td>Character Name:</td>
+        <td>
+          <input [(ngModel)]="user.characterName" type="text" />
+        </td>
+      </tr>
+      <tr>
+        <td>Class:</td>
+        <td>
+          <select [(ngModel)]="user.job" class="rounded" >
+            <option *ngFor="let job of jobs" [ngValue]="job">
+              {{ job }}
+            </option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Title:</td>
+        <td>
+          <input [(ngModel)]="user.title" type="text" />
+        </td>
+      </tr>
+      <tr>
+        <td>Reviewer:</td>
+        <td>
+          <input [(ngModel)]="user.reviewer" type="checkbox" />
+        </td>
+      </tr>
+      <tr>
+        <td>Admin:</td>
+        <td>
+          <input [(ngModel)]="user.admin" type="checkbox" />
+        </td>
+      </tr>
+    </table>
+    <span>
+        <span
+        ><button (click)="save()" class="btn btn-sm btn-primary">
+          Save
+        </button></span
+      >
+    </span>
+  </div>
+  
