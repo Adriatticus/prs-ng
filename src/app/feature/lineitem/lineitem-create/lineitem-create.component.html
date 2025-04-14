@@ -1,0 +1,60 @@
+<div class="p-4">
+  <section>
+    <span class="page-title font-weight-bold font-italic">{{ requestTitle }}</span>
+</section>
+<h1>  </h1>
+<table *ngIf="request" class="table table-striped table-hover">
+    <thead>
+        <!-- <th>Id</th> -->
+        <th>User</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Total</th>
+    </thead>
+    <tbody>
+        <tr>
+            <!-- <td>{{request.id}}</td> -->
+            <td>{{request.user.characterName}}</td>
+            <td>{{request.description}}</td>
+            <td>{{request.status}}</td>
+            <td>{{request.total | currency: 'USD': 'symbol':'1.2-2'}}</td>
+        </tr>
+    </tbody>
+</table>
+    <table class="table table-striped table-hover">
+      <thead>
+        <th>Select a product and it's quantity to be added to your request</th>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td>Prodcut:     
+            <select
+            [(ngModel)]="newLineitem.product"
+            class="rounded"
+            [compareWith]="compProduct"
+            >
+            <option *ngFor="let p of products" [ngValue]="p">
+              {{ p.name }} | {{ p.vendor.name }}
+            </option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Quantity
+            <input [(ngModel)]="newLineitem.quantity" class="rounded" type="number" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button
+          type="button" 
+          class="btn btn-secondary btn-sm" 
+          (click)="addLineitemToRequest()">
+          Add Product
+        </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>

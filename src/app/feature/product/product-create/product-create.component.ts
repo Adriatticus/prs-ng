@@ -27,7 +27,7 @@ export class ProductCreateComponent {
       },
       error: (err) => {
         console.error(
-          "Product Create Error: error loading products." + err.message
+          "Product Create Error: error loading vendors." + err.message
         );
       },
     });

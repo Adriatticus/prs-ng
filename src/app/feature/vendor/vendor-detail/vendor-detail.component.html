@@ -1,1 +1,67 @@
-<p>vendor-detail works!</p>
+<div class="p-4">
+    <h1>{{ title }}</h1>
+    <table>
+      <tr>
+        <td>Vendor Code:</td>
+        <td>
+          <input [(ngModel)]="vendor.code" type="text" disabled />
+        </td>
+      </tr>
+      <tr>
+        <td>Vendor Name:</td>
+        <td>
+          <input [(ngModel)]="vendor.name" type="text" disabled />
+        </td>
+      </tr>
+      <tr>
+        <td>Address:</td>
+        <td>
+          <input [(ngModel)]="vendor.address" type="text" disabled />
+        </td>
+      </tr>
+      <tr>
+        <td>City:</td>
+        <td>
+          <input [(ngModel)]="vendor.city" type="text" disabled />
+        </td>
+      </tr>
+      <tr>
+        <td>State:</td>
+        <td>
+          <input [(ngModel)]="vendor.state" type="text" disabled />
+        </td>
+      </tr>
+      <tr>
+        <td>Zip:</td>
+        <td>
+          <input [(ngModel)]="vendor.zip" type="text" disabled />
+        </td>
+      </tr>
+      <tr>
+        <td>Phone Number:</td>
+        <td>
+          <input [(ngModel)]="vendor.phoneNumber" type="text" disabled />
+        </td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td>
+          <input [(ngModel)]="vendor.email" type="text" disabled />
+        </td>
+      </tr>
+    </table>
+    <span>
+        <span
+          ><a routerLink="/vendor-edit/{{ vendor.id }}" class="btn btn-sm btn-warning"
+            >Edit</a
+          ></span
+        >
+        <span>
+          |
+          <button (click)="delete()" class="btn btn-sm btn-danger">
+            Delete
+          </button></span
+        >
+      </span>
+  </div>
+  

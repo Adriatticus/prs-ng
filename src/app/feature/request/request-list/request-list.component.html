@@ -33,6 +33,14 @@
           <td>{{ r.submittedDate }}</td>
           <td>{{ r.reasonForRejection }}</td>
           <td>
+            <a routerLink="/request-lines/{{ r.id }}">
+              <img
+                src="images/lines.png"
+                width="20"
+                height="20"
+                title="Request Products"
+              />
+            </a>
             <a routerLink="/request-edit/{{ r.id }}">
               <img
                 src="images/pencil-icon.png"

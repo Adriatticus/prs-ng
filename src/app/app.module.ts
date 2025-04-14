@@ -23,6 +23,10 @@ import { NotFoundComponent } from './core/not-found/not-found.component';
 import { MenuComponent } from './core/menu/menu.component';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { UserLoginComponent } from './feature/user/user-login/user-login.component';
+import { RequestLinesComponent } from './feature/lineitem/request-lines/request-lines.component';
+import { LineitemCreateComponent } from './feature/lineitem/lineitem-create/lineitem-create.component';
+// import { LineitemComponent } from './feature/lineitem/lineitem.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +48,11 @@ import { FormsModule } from '@angular/forms';
     VendorEditComponent,
     VendorDetailComponent,
     NotFoundComponent,
-    MenuComponent
+    MenuComponent,
+    UserLoginComponent,
+    RequestLinesComponent,
+    LineitemCreateComponent,
+    // LineitemComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, ObservedValueOf } from 'rxjs';
 import { User } from '../model/user';
+import { UserLogin } from '../model/user-login';
 
 const URL = 'http://localhost:8080/api/users';
 
@@ -29,6 +30,10 @@ export class UserService {
 
   delete(id: number): Observable<any> {
     return this.http.delete(URL + '/' + id) as Observable<User>;
+  }
+
+  login(userLogin: UserLogin): Observable<User> {
+    return this.http.post(URL + '/login', userLogin) as Observable<User>;
   }
 }
 

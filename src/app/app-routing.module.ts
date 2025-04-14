@@ -17,10 +17,13 @@ import { VendorDetailComponent } from './feature/vendor/vendor-detail/vendor-det
 import { VendorEditComponent } from './feature/vendor/vendor-edit/vendor-edit.component';
 import { VendorListComponent } from './feature/vendor/vendor-list/vendor-list.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
+import { UserLoginComponent } from './feature/user/user-login/user-login.component';
+import { RequestLinesComponent } from './feature/lineitem/request-lines/request-lines.component';
+import { LineitemCreateComponent } from './feature/lineitem/lineitem-create/lineitem-create.component';
 
 const routes: Routes = [
 
-  { path: '', redirectTo: '/user-list', pathMatch: 'full' },
+  { path: '', redirectTo: '/user-login', pathMatch: 'full' },
 
   { path: 'product-list', component: ProductListComponent },
   { path: 'product-create', component: ProductCreateComponent },
@@ -41,6 +44,13 @@ const routes: Routes = [
   { path: 'vendor-create', component: VendorCreateComponent },
   { path: 'vendor-edit/:id', component: VendorEditComponent },
   { path: 'vendor-detail/:id', component: VendorDetailComponent },
+
+  { path: 'request-lines/', component: RequestLinesComponent},
+  { path: 'request-lines/:id', component: RequestLinesComponent},
+  { path: 'lineItem-create', component: LineitemCreateComponent},
+  { path: 'lineItem-create/:id', component: LineitemCreateComponent},
+
+  { path: "user-login", component: UserLoginComponent},
 
   { path: '**', component: NotFoundComponent }
 ];
