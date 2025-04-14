@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductCreateComponent } from './feature/product/product-create/product-create.component';
 import { ProductDetailComponent } from './feature/product/product-detail/product-detail.component';
@@ -20,9 +20,9 @@ import { NotFoundComponent } from './core/not-found/not-found.component';
 import { UserLoginComponent } from './feature/user/user-login/user-login.component';
 import { RequestLinesComponent } from './feature/lineitem/request-lines/request-lines.component';
 import { LineitemCreateComponent } from './feature/lineitem/lineitem-create/lineitem-create.component';
+import { LineitemEditComponent } from './feature/lineitem/lineitem-edit/lineitem-edit.component';
 
 const routes: Routes = [
-
   { path: '', redirectTo: '/user-login', pathMatch: 'full' },
 
   { path: 'product-list', component: ProductListComponent },
@@ -45,18 +45,19 @@ const routes: Routes = [
   { path: 'vendor-edit/:id', component: VendorEditComponent },
   { path: 'vendor-detail/:id', component: VendorDetailComponent },
 
-  { path: 'request-lines/', component: RequestLinesComponent},
-  { path: 'request-lines/:id', component: RequestLinesComponent},
-  { path: 'lineItem-create', component: LineitemCreateComponent},
-  { path: 'lineItem-create/:id', component: LineitemCreateComponent},
+  { path: 'request-lines/', component: RequestLinesComponent },
+  { path: 'request-lines/:id', component: RequestLinesComponent },
+  { path: 'lineItem-create', component: LineitemCreateComponent },
+  { path: 'lineItem-create/:id', component: LineitemCreateComponent },
+  { path: 'lineItem-edit/:id', component: LineitemEditComponent },
 
-  { path: "user-login", component: UserLoginComponent},
+  { path: 'user-login', component: UserLoginComponent },
 
-  { path: '**', component: NotFoundComponent }
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

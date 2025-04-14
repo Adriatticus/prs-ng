@@ -21,11 +21,15 @@ import { VendorEditComponent } from './feature/vendor/vendor-edit/vendor-edit.co
 import { VendorDetailComponent } from './feature/vendor/vendor-detail/vendor-detail.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
 import { MenuComponent } from './core/menu/menu.component';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { UserLoginComponent } from './feature/user/user-login/user-login.component';
 import { RequestLinesComponent } from './feature/lineitem/request-lines/request-lines.component';
 import { LineitemCreateComponent } from './feature/lineitem/lineitem-create/lineitem-create.component';
+import { LineitemEditComponent } from './feature/lineitem/lineitem-edit/lineitem-edit.component';
 // import { LineitemComponent } from './feature/lineitem/lineitem.component';
 
 @NgModule({
@@ -52,13 +56,11 @@ import { LineitemCreateComponent } from './feature/lineitem/lineitem-create/line
     UserLoginComponent,
     RequestLinesComponent,
     LineitemCreateComponent,
+    LineitemEditComponent,
     // LineitemComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule, FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideHttpClient(withInterceptorsFromDi())],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

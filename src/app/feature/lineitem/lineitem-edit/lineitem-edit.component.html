@@ -1,8 +1,6 @@
 <div class="p-4">
   <section>
-    <span class="page-title font-weight-bold font-italic">{{
-      requestTitle
-    }}</span>
+    <span class="page-title font-weight-bold font-italic">{{ title }}</span>
   </section>
   <h1></h1>
   <table *ngIf="request" class="table table-striped table-hover">
@@ -16,23 +14,25 @@
     <tbody>
       <tr>
         <!-- <td>{{request.id}}</td> -->
-        <td>{{ request.user.characterName }}</td>
-        <td>{{ request.description }}</td>
-        <td>{{ request.status }}</td>
-        <td>{{ request.total | currency : "USD" : "symbol" : "1.2-2" }}</td>
+        <td>{{ lineitem.request.user.characterName }}</td>
+        <td>{{ lineitem.request.description }}</td>
+        <td>{{ lineitem.request.status }}</td>
+        <td>
+          {{ lineitem.request.total | currency : "USD" : "symbol" : "1.2-2" }}
+        </td>
       </tr>
     </tbody>
   </table>
   <table class="table table-striped table-hover">
     <thead>
-      <th>Select a product and it's quantity to be added to your request</th>
+      <th>Change product and/or quantity</th>
     </thead>
     <tbody>
       <tr>
         <td>
           Prodcut:
           <select
-            [(ngModel)]="newLineitem.product"
+            [(ngModel)]="lineitem.product"
             class="rounded"
             [compareWith]="compProduct"
           >
@@ -46,23 +46,19 @@
         <td>
           Quantity
           <input
-            [(ngModel)]="newLineitem.quantity"
+            [(ngModel)]="lineitem.quantity"
             class="rounded"
             type="number"
           />
         </td>
       </tr>
-      <tr>
-        <td>
-          <button
-            type="button"
-            class="btn btn-secondary btn-sm"
-            (click)="addLineitemToRequest()"
-          >
-            Add Product
-          </button>
-        </td>
-      </tr>
+      <span>
+        <span
+          ><button (click)="save()" class="btn btn-sm btn-primary">
+            Save
+          </button></span
+        >
+      </span>
     </tbody>
   </table>
 </div>
