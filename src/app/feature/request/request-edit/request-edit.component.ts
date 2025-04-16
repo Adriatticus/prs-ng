@@ -18,7 +18,7 @@ export class RequestEditComponent implements OnInit, OnDestroy{
   requestId!: number;
   subscription!: Subscription;
   deliveries: string[] = ["Delivery", "Pick-up"];
-  statuses: string[] = ["NEW", "SUBMITTED", "APPROVED", "REJECTED"]
+  statuses: string[] = ["NEW", "REVIEW", "APPROVED", "REJECTED"]
 
   constructor(
     private requestSvc: RequestService,

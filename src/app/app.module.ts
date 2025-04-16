@@ -30,6 +30,8 @@ import { UserLoginComponent } from './feature/user/user-login/user-login.compone
 import { RequestLinesComponent } from './feature/lineitem/request-lines/request-lines.component';
 import { LineitemCreateComponent } from './feature/lineitem/lineitem-create/lineitem-create.component';
 import { LineitemEditComponent } from './feature/lineitem/lineitem-edit/lineitem-edit.component';
+import { RequestReviewComponent } from './feature/request/request-review/request-review.component';
+import { RequestApproveComponent } from './feature/request/request-approve/request-approve.component';
 // import { LineitemComponent } from './feature/lineitem/lineitem.component';
 
 @NgModule({
@@ -57,6 +59,8 @@ import { LineitemEditComponent } from './feature/lineitem/lineitem-edit/lineitem
     RequestLinesComponent,
     LineitemCreateComponent,
     LineitemEditComponent,
+    RequestReviewComponent,
+    RequestApproveComponent,
     // LineitemComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],

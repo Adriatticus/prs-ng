@@ -30,4 +30,21 @@ export class RequestService {
   delete(id: number): Observable<any> {
     return this.http.delete(URL + '/' + id) as Observable<Request>;
   }
+
+  submitReview(request: Request): Observable<Request> {
+    return this.http.put(URL + '/submit-review/' + request.id, request) as Observable<Request>;
+  }
+
+  denied(request: Request): Observable<Request> {
+    return this.http.put(URL + '/reject/' + request.id, request) as Observable<Request>;
+  }
+
+  approved(request: Request): Observable<Request> {
+    return this.http.put(URL + '/approve/' + request.id, request) as Observable<Request>;
+  }
+
+  getReviewList(id: number): Observable<Request[]> {
+    return this.http.get(URL + '/list-review/' + id) as Observable<Request[]>;
+  }
+
 }

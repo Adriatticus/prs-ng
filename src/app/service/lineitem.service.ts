@@ -33,7 +33,6 @@ export class LineitemService {
   }
 
   getLinesForRequest(id: number): Observable<Lineitem[]> {
-    return this.http.get(OURL + '/' + id) as Observable<Lineitem[]>;
+    return this.http.get(URL + '/lines-for-req/' + id) as Observable<Lineitem[]>;
   }
-
 }

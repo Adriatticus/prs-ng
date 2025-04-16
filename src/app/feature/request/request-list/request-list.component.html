@@ -1,9 +1,21 @@
+<app-menu></app-menu>
 <div class="p-4">
-    <section class="heading">
-      <span class="page-title font-weight-bold font-italic">{{ title }}</span>
-      <a routerLink="/request-create">
-        <img width="20" height="20" src="images/add-icon.png" title="Add New" />
-      </a>
+  <span
+  style="
+  color: whitesmoke;
+  float: right;
+  padding-right: 30px;
+  font-style: italic;
+  font-weight: bold;"
+  >
+  {{ welcomeMsg}}
+  </span>
+  <section class="heading">
+    <span class="page-title font-weight-bold font-italic">{{ title }}</span>
+    <a routerLink="/request-create">
+      <img width="20" height="20" src="images/add-icon.png" title="Add New" />
+    </a>
+
     </section>
     <table class="table table-striped table-hover">
       <thead>
@@ -33,7 +45,9 @@
           <td>{{ r.submittedDate }}</td>
           <td>{{ r.reasonForRejection }}</td>
           <td>
-            <a routerLink="/request-lines/{{ r.id }}">
+            <!-- *ngIf="loggedInUser && loggedInUser.id === r.user?.id" -->
+            <a 
+               [routerLink]="'/request-lines/' + r.id">
               <img
                 src="images/lines.png"
                 width="20"
@@ -41,6 +55,7 @@
                 title="Request Products"
               />
             </a>
+          
             <a routerLink="/request-edit/{{ r.id }}">
               <img
                 src="images/pencil-icon.png"

@@ -5,6 +5,7 @@ import { User } from '../../../model/user';
 import { Router } from '@angular/router';
 import { RequestService } from '../../../service/request.service';
 import { UserService } from '../../../service/user.service';
+import { SystemService } from '../../../service/system.service';
 
 @Component({
   selector: 'app-request-create',
@@ -20,13 +21,23 @@ export class RequestCreateComponent implements OnInit, OnDestroy {
   deliveries: string[] = ["Delivery", "Pick-up"];
 
 
-  constructor(private requestSvc: RequestService, private userSvc: UserService, private router: Router) {}
+  constructor(
+    private requestSvc: RequestService, 
+    private userSvc: UserService, 
+    private router: Router,
+    private sysSvc: SystemService
+  ) {}
 
 
   ngOnInit(): void {
-    this.subscription = this.userSvc.getById(1).subscribe((resp) => {
-      this.newRequest.user = resp;
-    });
+    // this.subscription = this.userSvc.getById(1).subscribe((resp) => {
+    //   this.newRequest.user = resp;
+    // });
+
+
+    this.newRequest.user = this.sysSvc.loggedInUser
+
+
     this.subscription = this.userSvc.list().subscribe({
       next: (resp) => {
         this.users = resp;

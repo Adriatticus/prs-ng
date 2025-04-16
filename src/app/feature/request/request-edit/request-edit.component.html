@@ -1,6 +1,7 @@
+<app-menu></app-menu>
 <div class="p-4">
     <h1>{{ title }}</h1>
-    <table *ngIf="request">
+    <table *ngIf="request, user">
       <tr>
         <td>User:</td>
         <td>
@@ -38,7 +39,7 @@
       <tr>
         <td>Status:</td>
         <td>
-            <select [(ngModel)]="request.status" class="rounded">
+            <select [(ngModel)]="request.status" class="rounded" disabled >
               <option *ngFor="let status of statuses" [ngValue]="status">
                 {{ status }}
               </option>
@@ -48,7 +49,7 @@
       <tr>
         <td>Total:</td>
         <td>
-          <input [(ngModel)]="request.total" type="number" />
+          <input [(ngModel)]="request.total" type="number" disabled />
         </td>
       </tr>
       <tr>

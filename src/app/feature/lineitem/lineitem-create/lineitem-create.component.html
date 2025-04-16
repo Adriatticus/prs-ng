@@ -1,3 +1,4 @@
+<app-menu></app-menu>
 <div class="p-4">
   <section>
     <span class="page-title font-weight-bold font-italic">{{
@@ -34,6 +35,7 @@
           <select
             [(ngModel)]="newLineitem.product"
             class="rounded"
+            style="margin-left: 10px;"
             [compareWith]="compProduct"
           >
             <option *ngFor="let p of products" [ngValue]="p">
@@ -44,11 +46,12 @@
       </tr>
       <tr>
         <td>
-          Quantity
+          Quantity:
           <input
             [(ngModel)]="newLineitem.quantity"
             class="rounded"
             type="number"
+            style="margin-left: 5px;"
           />
         </td>
       </tr>

@@ -1,41 +1,56 @@
+<app-menu></app-menu>
 <div class="p-4">
-    <h1>{{ title }}</h1>
-    <table>
-      <tr>
-        <td>User:</td>
+  <table class="table table-striped table-hover">
+    <thead>
+      <th>Request Create</th>
+    </thead>
+    <tbody>
+       <tr>
         <td>
-            <input [(ngModel)]="newRequest.user.characterName" type="text" disabled />
+          User:
+            <input [(ngModel)]="newRequest.user.characterName" type="text" style="margin-left: 75px;" disabled />
         </td>
       </tr>
       <tr>
-        <td>Description:</td>
         <td>
-          <input [(ngModel)]="newRequest.description" type="text" />
+          Description:
+          <input [(ngModel)]="newRequest.description" type="text" style="margin-left: 27px;" />
         </td>
       </tr>
       <tr>
-        <td>Justificatoin:</td>
         <td>
-          <input [(ngModel)]="newRequest.justification" type="text" />
+          Justificatoin:
+          <input [(ngModel)]="newRequest.justification" type="text" style="margin-left: 24px;" />
         </td>
       </tr>
       <tr>
-        <td>Date Needed:</td>
         <td>
-          <input [(ngModel)]="newRequest.dateNeeded" type="date" />
+          Date Needed:
+          <input [(ngModel)]="newRequest.dateNeeded" type="date" style="margin-left: 15px;" />
         </td>
       </tr>
       <tr>
-        <td>Delivery Mode:</td>
         <td>
-            <select [(ngModel)]="newRequest.deliveryMode" class="rounded">
+          Delivery Mode:
+            <select [(ngModel)]="newRequest.deliveryMode" class="rounded" style="margin-left: 6px;">
               <option *ngFor="let delivery of deliveries" [ngValue]="delivery">
                 {{ delivery }}
               </option>
             </select>
           </td>
       </tr>
-    </table>
-    <button (click)="addRequest()">Create</button>
+      <tr>
+        <td>
+          <button
+            type="button"
+            class="btn btn-secondary btn-sm"
+            (click)="addRequest()"
+          >
+            Add Product
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
   </div>
   

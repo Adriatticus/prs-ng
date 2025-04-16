@@ -1,6 +1,7 @@
+<app-menu></app-menu>
 <div class="p-4">
     <h1>{{ title }}</h1>
-    <table>
+    <table *ngIf="product">
       <tr>
         <td>Part Number:</td>
         <td>
@@ -46,7 +47,7 @@
         </td>
     </tr>
     </table>
-    <span>
+    <span *ngIf="product">
         <span
           ><a routerLink="/product-edit/{{ product.id }}" class="btn btn-sm btn-warning"
             >Edit</a

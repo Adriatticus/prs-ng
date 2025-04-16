@@ -45,7 +45,6 @@ export class UserEditComponent implements OnInit, OnDestroy {
         },
       });
     });
-    throw new Error('Method not implemented.');
   }
 
   save() {
