@@ -86,23 +86,29 @@
             />
           </a>
         </td>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <!-- <td></td> -->
-          <td>
-            <span>
-              <span
-              ><button [disabled]="!lineItems" (click)="submitForReview()" class="btn btn-sm btn-primary">
+      </tr>
+
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <!-- <td></td> -->
+        <td>
+          <span>
+            <span
+              ><button
+                [disabled]="!lineItems"
+                (click)="submitForReview()"
+                class="btn btn-sm btn-primary"
+              >
                 Submit for Review
               </button></span
-              >
-            </span>
-          </td>
-        </tr>
+            >
+          </span>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
